@@ -4,10 +4,12 @@ function validateUser(user, pass) {
     { user: 'juan@juan.juan', pass: 'juan' },
   ];
   // Solución con notación funcional utilizando some
-  let validation = USERS.some(u => u.user === user && u.pass === pass);
+  let validation = USERS.some(
+    u => u.user === user && u.pass === pass
+  );
   if (validation) {
-    localStorage.setItem('user', user);
-    localStorage.setItem('pass', pass);
+    sessionStorage.setItem('user', user);
+    sessionStorage.setItem('pass', pass);
   }
   return validation;
 }

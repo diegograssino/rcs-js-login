@@ -17,7 +17,10 @@ function handleClick(event) {
 
   setTimeout(() => {
     let validationOk = false;
-    validationOk = validateUser(user.value, pass.value);
+    validationOk = validateUser(
+      user.value,
+      pass.value
+    );
     if (validationOk) {
       window.location.href = '/cart';
     } else {
@@ -28,7 +31,10 @@ function handleClick(event) {
 
 function loginControl() {
   let validationOk = false;
-  validationOk = validateUser(localStorage.getItem('user'), localStorage.getItem('pass'));
+  validationOk = validateUser(
+    sessionStorage.getItem('user'),
+    sessionStorage.getItem('pass')
+  );
   if (validationOk) {
     window.location.href = '/cart';
   }
